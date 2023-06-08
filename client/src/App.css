@@ -56,6 +56,26 @@ aside{
 .btn_M{
   width: 20%;
   height: 30px;
+  color: white;
+  border-radius: 5px;
+  background-color: darkcyan;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.hand:hover{
+  cursor: pointer;
+}
+
+.margin{
+  margin: 5px;
+}
+
+.green{
+  background-color: green;
+}
+
+.red{
+  background-color: red;
 }
 
 .right{
@@ -136,4 +156,19 @@ input{
   color: black;
 }
 
+.item{
+  width: 120px;
+  text-align: right;
+}
+
+.item_list{
+  width: 30%;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: space-around;
+}
 

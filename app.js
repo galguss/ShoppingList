@@ -31,7 +31,10 @@ database.once('connected', () => {
 });
 
 const categories = require('./Routes/categories_R');
-app.use('/categories', categories);
+app.use('/Categories', categories);
+
+const shoppingList = require('./Routes/ShoppingList_R');
+app.use('/List', shoppingList);
 
 app.listen(port, (req, res) => {
     console.log("server is running");

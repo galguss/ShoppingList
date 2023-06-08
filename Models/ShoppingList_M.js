@@ -5,11 +5,11 @@ const ListSchema = mongoose.Schema({
         require: true,
         type: String
     },
-    path_Image: {
+    Amount: {
         require: true,
-        type: String
+        type: Number
     },
-    categories: {
+    category: {
         require: true,
         type: String
     },

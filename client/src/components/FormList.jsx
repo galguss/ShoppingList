@@ -15,7 +15,7 @@ function FormList({
   const [User, setUser] = useState(value.user);
 
   async function handleSubmit() {
-    const res = await fetch(`http://localhost:5555/List/${type}`, {
+    await fetch(`http://localhost:5555/List/${type}`, {
       method: method,
       headers: {
         "Content-Type": "application/json",

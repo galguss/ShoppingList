@@ -87,13 +87,12 @@ aside{
 
 }
 
-.b{
+.cart{
   background-color: aquamarine;
   background-image: url(./images/cart.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
-  
 }
 
 footer{
@@ -170,5 +169,17 @@ input{
   align-items: center;
   height: 40px;
   justify-content: space-around;
+}
+
+table{
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+th,td{
+  text-align: center;
+  border: black solid 1px;
+  border-radius: 8px;
 }
 

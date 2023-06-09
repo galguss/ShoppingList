@@ -14,16 +14,23 @@ function Aside({ handleAddToCart }) {
   const [Value, setValue] = useState("");
   const [Id, setId] = useState("");
 
-  const [Data, setData] = useState([]);
+  const [DataCategories, setDataCategories] = useState([]);
+  const [DataShoppingList, setDataShoppingList] = useState([]);
 
   async function HandleGetData() {
-    const res = await fetch(`http://localhost:5555/${MiniNav}`);
-    setData(await res.json());
+    const res = await fetch(`http://localhost:5555/Categories`);
+    setDataCategories(await res.json());
+  }
+
+  async function HandleGetDataList(){
+    const res = await fetch(`http://localhost:5555/List`);
+    setDataShoppingList(await res.json());
   }
 
   useEffect(() => {
     HandleGetData();
-  }, [Counter, MiniNav]);
+    HandleGetDataList();
+  }, [Counter]);
 
   async function handleDelete() {
     await fetch(`http://localhost:5555/${MiniNav}/Delete`, {
@@ -93,7 +100,7 @@ function Aside({ handleAddToCart }) {
             />
           ) : null}
           <ul className="show_Data">
-            {Data.map((item, index) => (
+            {DataCategories.map((item, index) => (
               <li key={"category_" + index} className="line_data">
                 <span className="item">{item.category}</span>
                 <button
@@ -138,7 +145,7 @@ function Aside({ handleAddToCart }) {
             <FormList
               handleRefresh={() => setCounter(Counter + 1)}
               handleClose={() => setAlert(false)}
-              categories={Data}
+              categories={DataCategories}
               method={Method}
               type={Type}
               value={Value}
@@ -146,7 +153,7 @@ function Aside({ handleAddToCart }) {
             />
           ) : null}
           <ul className="show_Data">
-            {Data.map(
+            {DataShoppingList.map(
               (item, index) =>
                 !item.item_purchased && (
                   <li key={"Item" + index} onClick={() => setId(item._id)}>

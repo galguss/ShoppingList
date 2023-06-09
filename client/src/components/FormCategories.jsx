@@ -11,7 +11,7 @@ function FormCategories({
   const [Categories, setCategories] = useState(value);
 
   async function handleSubmit() {
-    const res = await fetch(`http://localhost:5555/Categories/${type}`, {
+    await fetch(`http://localhost:5555/Categories/${type}`, {
       method: method,
       headers: {
         "Content-Type": "application/json",
